@@ -11,10 +11,7 @@ Não posso adicionar uma tarefa com uma data e hora que já passou
 
 === === === === === === === === === === === === ==
 
-ROUTE - /task/add - Adicionar uma tarefa
-
-
-
+ROUTE - /task - Adicionar uma tarefa
 
 {
     id
@@ -25,7 +22,7 @@ ROUTE - /task/add - Adicionar uma tarefa
 
 === === === === === === === === === === === === ===
 
-ROUTE - /task/update - Editar uma tarefa
+ROUTE - /task - Editar uma tarefa
 
 {
     id
@@ -36,7 +33,7 @@ ROUTE - /task/update - Editar uma tarefa
 
 === === === === === === === === === === === === ===
 
-ROUTE - /task/delete/{id_task} - Editar uma tarefa
+ROUTE - /task/{id_task} - Editar uma tarefa
 
 === === === === === === === === === === === === ===
 
