@@ -5,6 +5,19 @@ const taskService = new TaskService();
 class TaskController {
   constructor() {}
 
+  get(Req: Request, Res: Response) {
+    const { status } = Req.query;
+    if (status && (status === "in_progress" || status === "completed")) {
+      const result = taskService.get(status);
+      Res.status(201).json({
+        message: "resultado",
+        result,
+      });
+      console.log(result)
+    } else {
+      Res.status(401).json({ error: "Ocorreu algum erro" });
+    }
+  }
   add(Req: Request, Res: Response) {
     const { id, descricao, data, status } = Req.body;
 
