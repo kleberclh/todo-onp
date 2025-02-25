@@ -13,9 +13,19 @@ class TaskController {
         message: "resultado",
         result,
       });
-      console.log(result)
+      console.log(result);
     } else {
       Res.status(401).json({ error: "Ocorreu algum erro" });
+    }
+  }
+
+  getById(Req: Request, Res: Response) {
+    const { id_task } = Req.params;
+    if (id_task) {
+      const result = taskService.getById(id_task);
+      Res.json(result);
+    } else {
+      Res.status(401).json({ error: "Invalid params" });
     }
   }
   add(Req: Request, Res: Response) {
