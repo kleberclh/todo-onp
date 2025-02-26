@@ -6,7 +6,7 @@ const router = Router();
 router.get("/tasks", taskController.get);
 router.get("/task/:id_task", taskController.getById);
 router.post("/task", taskController.add);
-router.put("/task/:id_task");
+router.put("/task/:id_task", taskController.update);
 router.delete("/task/:id_task");
 
 export default router;

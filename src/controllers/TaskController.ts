@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import TaskService from "../services/TaskService";
+import { error } from "console";
 
 const taskService = new TaskService();
 class TaskController {
@@ -42,6 +43,21 @@ class TaskController {
       }
     } else {
       Res.status(401).json({ error: "Invalid parameterssss" });
+    }
+  }
+
+  update(Req: Request, Res: Response) {
+    const { id, descricao, data, status } = Req.body;
+    const { id_task } = Req.params;
+    if (id && descricao && data && status && id_task) {
+      if (status === "in_progress" || status === "completed") {
+        const result = taskService.update(Req.body, id_task);
+        Res.status(201).json(result);
+      } else {
+        Res.status(401).json({ error: "Invalid parametersss3333sssssssss" });
+      }
+    } else {
+      Res.status(401).json({ error: "Invalid parametersssssd333sssss" });
     }
   }
 }
